@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exponential Growth Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header -->
+  <header class="text-center py-10 bg-gradient-to-r from-purple-600 to-blue-500 shadow-lg">
+    <h1 class="text-5xl font-bold">Exponential Growth in the Real World</h1>
+    <p class="mt-4 text-lg">A Complete Algebra 1 Project</p>
+  </header>
+
+  <!-- Scenario -->
+  <section class="p-10 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">1. Real-World Scenario</h2>
+    <p class="text-lg leading-relaxed">
+      This project models the growth of a viral social media trend. The number of views doubles every day.
+      This is an example of exponential growth because the rate increases over time.
+    </p>
+  </section>
+
+  <!-- Equation -->
+  <section class="p-10 bg-gray-800">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">2. Exponential Function Equation</h2>
+      <p class="text-lg">The equation used is:</p>
+      <p class="text-2xl mt-4 font-mono">y = 100(2)^x</p>
+      <ul class="mt-4 text-lg">
+        <li>y = number of views</li>
+        <li>100 = starting views</li>
+        <li>2 = growth factor</li>
+        <li>x = number of days</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Table -->
+  <section class="p-10 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">3. Table of Values</h2>
+    <table class="table-auto w-full text-center border border-white">
+      <thead>
+        <tr class="bg-blue-600">
+          <th class="p-3">Days (x)</th>
+          <th class="p-3">Views (y)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="p-2">0</td><td>100</td></tr>
+        <tr><td class="p-2">1</td><td>200</td></tr>
+        <tr><td class="p-2">2</td><td>400</td></tr>
+        <tr><td class="p-2">3</td><td>800</td></tr>
+        <tr><td class="p-2">4</td><td>1600</td></tr>
+        <tr><td class="p-2">5</td><td>3200</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Graph -->
+  <section class="p-10 bg-gray-800">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">4. Graph</h2>
+      <canvas id="graph" class="bg-white rounded-xl p-4"></canvas>
+    </div>
+  </section>
+
+  <!-- Explanation -->
+  <section class="p-10 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4">5. Interpretation</h2>
+    <p class="text-lg leading-relaxed">
+      The graph shows exponential growth. The number of views increases rapidly over time.
+      The growth factor of 2 means the amount doubles each day. This demonstrates how quickly
+      exponential functions can grow compared to linear ones.
+    </p>
+  </section>
+
+  <!-- Bonus -->
+  <section class="p-10 bg-gray-800">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Bonus: Linear vs Exponential</h2>
+      <p class="text-lg">
+        A linear model would add the same number each day, while exponential growth multiplies.
+        This makes exponential growth much faster over time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 bg-black">
+    <p>Created for Algebra 1 Project | 2026</p>
+  </footer>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('graph');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [0,1,2,3,4,5],
+        datasets: [{
+          label: 'Exponential Growth',
+          data: [100,200,400,800,1600,3200],
+          borderWidth: 3
+        }]
+      },
+      options: {
+        scales: {
+          x: { title: { display: true, text: 'Days' } },
+          y: { title: { display: true, text: 'Views' } }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
